@@ -1,0 +1,35 @@
+{
+  "name": "typescript-lib-starter",
+  "version": "1.0.0",
+  "description": "A repo for initializing a TypeScript library",
+  "main": "lib/src/index",
+  "typings": "lib/src/index",
+  "scripts": {
+    "mocha": "mocha test/**/*.spec.ts",
+    "test-typedefs": "typings-checker --project tsconfig.json --allow-expect-error test-typedefs/*.ts",
+    "lint": "tslint --project . && tslint --project test-typedefs",
+    "test": "npm run mocha && npm run test-typedefs && npm run lint",
+    "prepublish": "rm -rf lib/ && npm test && tsc --declaration && rm -rf lib/test"
+  },
+  "files": [
+    "lib"
+  ],
+  "author": "Sam Beran (sberan@gmail.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sberan/typescript-lib-starter.git"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.41",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.2",
+    "typings-checker": "^2.0.0"
+  }
+}
