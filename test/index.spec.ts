@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import { something } from 'src'
+import { something } from '../src'
 
 describe('my library', () => {
   it('should do some things', () => {
